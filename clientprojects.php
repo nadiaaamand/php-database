@@ -8,27 +8,29 @@
 <body>
 
 <?php
-// filmlist.php?cid=1
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
 
 ?>
 
-<h1>Films in category #<?=$cid?></h1>
+<h1>Client #<?=$cid?></h1>
 <ul>
 <?php
 require_once 'dbcon.php';
-$sql = 'SELECT f.film_id, f.title, f.release_year
-FROM film f, film_category fc
-WHERE fc.category_id=?
-AND f.film_id=fc.film_id';
+$sql = 'SELECT `client-name`, `client-adress`, `client-contact-name`, `client-contact phone`, `zip_code_zip_code_id`
+from client';
 
 $stmt = $link->prepare($sql);
-$stmt->bind_param('i', $cid);
 $stmt->execute();
-$stmt->bind_result($fid, $ftitle, $fyear);
+$stmt->bind_result($cnam, $cadr, $ccnam, $ccphone, $czip);
 
 while($stmt->fetch()) {
-	echo '<li><a href="filmdetails.php?fid='.$fid.'">'.$ftitle.' ('.$fyear.')</a></li>'.PHP_EOL;
+	echo '<h2>'.$cnam.'</h1>';
+	//combine to strings and make between them
+	echo '<h5>'.$cadr. ' ' .$czip.'</h5>';
+	echo '<h5>'.$ccnam.'</h5>';
+	echo '<h5>'.$ccphone.'</h5>';
+	
+	//echo '<li><a href="projectdetails.php?fid='.$cnam.'">'.$cadr.' ('.$czip.')</a></li>'.PHP_EOL;
 }
 
 ?>

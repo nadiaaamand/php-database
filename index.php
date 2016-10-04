@@ -17,7 +17,7 @@ $stmt->execute();
 $stmt->bind_result($cid, $cnam);
 
 while($stmt->fetch()){
-	echo '<li><a href="clientprojects.php?cid='.$cid.'">'.$cnam.'</a></li>'.PHP_EOL;
+	echo '<li><a href="clientdetails.php?cid='.$cid.'">'.$cnam.'</a></li>'.PHP_EOL;
 }
 
 ?>

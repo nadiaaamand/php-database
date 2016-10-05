@@ -6,6 +6,9 @@
 </head>
 
 <body>
+<?php 
+include 'menu.php';
+?>
 <h1>Clients</h1>
 <ul>
 <?php

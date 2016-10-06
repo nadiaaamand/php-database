@@ -3,10 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-
+<header>
+<?php 
+include 'menu.php'
+?>
+</header>
 <?php
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
 

@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
+<header>
+<?php 
+include 'menu.php'
+?>
+</header>
 <h2>Personal Resources</h2>
 <ul>
 <?php 
@@ -54,8 +60,8 @@ while($stmt->fetch()) {
 ?>
 </ul>
 <form action="deleteproject.php" method="post">
-    	<input type="text" name="pid" placeholder="Project ID">
-        <input type="text" name="rid" placeholder="Resource ID">
+    	<input type="text" name="pid" placeholder="Project ID" required>
+        <input type="text" name="rid" placeholder="Resource ID" required>
     	<input type="submit" value="Delete Resource">
     </form>
 

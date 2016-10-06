@@ -45,12 +45,19 @@ $stmt->execute();
 $stmt->bind_result($pid, $rid);
 
 while($stmt->fetch()) { 
-	echo '<p>'.$pid.' ' .$rid. '</p>';
+	echo '<h5>Project ID</h5>';
+	echo '<p>'.$pid.'</p>';
+	echo '<h5>Resource ID</h5>';
+	echo '<p>'.$rid.'</p>';
 	
 }
 ?>
 </ul>
-
+<form action="deleteproject.php" method="post">
+    	<input type="text" name="pid" placeholder="Project ID">
+        <input type="text" name="rid" placeholder="Resource ID">
+    	<input type="submit" value="Delete Resource">
+    </form>
 
 </body>
 </html>

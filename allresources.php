@@ -28,12 +28,6 @@ while($stmt->fetch()) {
 
 }
 ?>
-</ul>
 
-<form action="deleteproject.php" method="post">
-    	<input type="text" name="$pid" placeholder="Project ID">
-        <input type="text" name="$rid" placeholder="Resource ID">
-    	<input type="submit" value="Delete Resource">
-    </form>
 </body>
 </html>

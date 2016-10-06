@@ -19,7 +19,7 @@ WHERE `Client-ID` = ?';
 $stmt = $link->prepare($sql);
 $stmt->bind_param('si', $cnam, $cid);
 $stmt->execute();
-$stmt->bind_result($cid, $cnam);
+//$stmt->bind_result($cid, $cnam);
 
 if ($stmt->affected_rows >0 ){
 	echo 'Information Updated';
@@ -29,7 +29,8 @@ else {
 
 }
 ?>
-
+<br>
+<a href="clientdetails.php?cid=<?=$cid?>">Client details</a><br>
 </body>
 
 </html>

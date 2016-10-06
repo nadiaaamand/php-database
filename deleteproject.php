@@ -20,7 +20,7 @@ AND `Resources-ID` = ?';
 $stmt = $link->prepare($sql);
 $stmt->bind_param('ii', $pid, $rid);
 $stmt->execute();
-$stmt->bind_result($pid, $rid);
+//$stmt->bind_result($pid, $rid);
 
 if ($stmt->affected_rows >0 ){
 	echo 'Resource deleted';
@@ -31,5 +31,7 @@ else {
 }
 
 ?>
+<br>
+<a href="allresources.php?cid=<?=$cid?>">All resources</a><br>
 </body>
 </html>

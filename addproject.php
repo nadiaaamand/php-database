@@ -21,7 +21,8 @@ else {
 
 }
 ?>
-<hr>
+<br>
+<a href="index.php?cid=<?=$cid?>">Clients</a><br>
 
 
 </body>

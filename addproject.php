@@ -1,21 +1,16 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-</head>
-
 <body>
 <?php
-$pid = filter_input(INPUT_POST, 'pid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
-$cid = filter_input(INPUT_POST, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
+$cnam = filter_input(INPUT_POST, '$cnam', FILTER_SANITIZE_STRING) or die('Missing/illegal parameter1');
+$cad = filter_input(INPUT_POST, '$cad', FILTER_SANITIZE_STRING) or die('Missing/illegal parameter2');
+$ccnam = filter_input(INPUT_POST, '$ccnam', FILTER_SANITIZE_STRING) or die('Missing/illegal parameter3');
+$cphone = filter_input(INPUT_POST, '$cphone', FILTER_VALIDATE_INT) or die('Missing/illegal parameter4');
+$czip = filter_input(INPUT_POST, '$czip', FILTER_VALIDATE_INT) or die('Missing/illegal parameter5');
 
 require_once 'dbcon.php';
 
-$sql = 'INSERT INTO Project(`Project-ID`, `Project-Name`, `Project-Description`, `Project-Start-Date`, `Project-End-Date`, `CLIENT-ID`)
-VALUES(?, ?, ?, ?, ?, ?)';
+$sql = 'INSERT INTO `Client`(`Client-Name`, `Client-Adress`, `Client-Contact-Name`, `Client-Contact-Phone`, `Zip_Code_Zip_Code_ID`) VALUES (?,?,?,?,?)';
 $stmt = $link->prepare($sql);
-$stmt->bind_param('issssi', $pid, $pname, $pdesc, $pstart, $pend, $cid);
+$stmt->bind_param('sssii', $cnam, $cad, $ccnam, $cphone, $czip);
 $stmt->execute();
 
 if ($stmt->affected_rows >0 ){
@@ -27,8 +22,7 @@ else {
 }
 ?>
 <hr>
-<a href="clientdetails.php?fid=<?=$pid?>">Client Details</a><br>
-<a href="clientprojects.php?cid=<?=$cid?>">Client Projects</a><br>
+
 
 </body>
 </html>

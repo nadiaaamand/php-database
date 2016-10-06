@@ -14,7 +14,8 @@ include 'menu.php';
 
 require_once 'dbcon.php';
 
-$sql = 'SELECT `Resource-Name`, `Resource_Detail`, `Resource-Type-Code-ID` FROM Resources';
+$sql = 'SELECT `Resource-Name`, `Resource_Detail`, `Resource-Type-Code-ID` 
+FROM Resources';
 
 $stmt = $link->prepare($sql);
 $stmt->execute();
@@ -28,5 +29,11 @@ while($stmt->fetch()) {
 }
 ?>
 </ul>
+
+<form action="deleteproject.php" method="post">
+    	<input type="text" name="$pid" placeholder="Project ID">
+        <input type="text" name="$rid" placeholder="Resource ID">
+    	<input type="submit" value="Delete Resource">
+    </form>
 </body>
 </html>

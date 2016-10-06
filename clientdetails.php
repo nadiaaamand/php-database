@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Untitled Document</title>
-<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 
@@ -27,6 +26,14 @@ $stmt->bind_result($cnam, $cadr, $ccnam, $ccphone, $czip);
 while($stmt->fetch()) { }
 
 echo '<h3>'.$cnam.'</h3>';
+?>
+<!--UPDATE DETAILS-->
+	<form action="updatedetails.php" method="post">
+    	<input type="hidden" name="$cid" value='<?=$cid?>'>
+        <input type="text" name="$cnam" placeholder="Client Name">
+    	<input type="submit" value="Update information">
+    </form>
+<?php 
 	//combine to strings and make between them
 	echo '<h4>'.'Address:'.'</h4>';
 	echo '<p>'.$cadr. ' ' .$czip.'</p>';
@@ -36,6 +43,7 @@ echo '<h3>'.$cnam.'</h3>';
 	echo '<p>'.$ccphone.'</p>';
 ?>
 </ul>
+      
 
 <h2>Projects</h2>
 <ul>

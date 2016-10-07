@@ -12,7 +12,8 @@
 include 'menu.php'
 ?>
 </header>
-<h2>Personal Resources</h2>
+<article>
+<h1>Personal Resources</h1>
 <ul>
 <?php 
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
@@ -38,7 +39,7 @@ while($stmt->fetch()) {
 </form>
 </ul>
 
-<h2>Working projects</h2>
+<h1>Working projects</h1>
 <ul>
 <?php 
 
@@ -51,19 +52,22 @@ $stmt->execute();
 $stmt->bind_result($pid, $rid);
 
 while($stmt->fetch()) { 
+	echo '<br>';
 	echo '<h5>Project ID</h5>';
 	echo '<p>'.$pid.'</p>';
 	echo '<h5>Resource ID</h5>';
 	echo '<p>'.$rid.'</p>';
-	
+	echo '<br>';
 }
 ?>
 </ul>
+<ul id="delete">
 <form action="deleteproject.php" method="post">
-    	<input type="text" name="pid" placeholder="Project ID" required>
-        <input type="text" name="rid" placeholder="Resource ID" required>
+    	<input type="text" name="pid" placeholder="Project ID" required><br>
+        <input type="text" name="rid" placeholder="Resource ID" required><br>
     	<input type="submit" value="Delete Resource">
     </form>
-
+</ul>
+</article>
 </body>
 </html>

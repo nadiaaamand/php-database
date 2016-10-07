@@ -12,6 +12,7 @@
 include 'menu.php';
 ?>
 </header>
+<article>
 <h1>Clients</h1>
 <ul>
 <?php
@@ -23,24 +24,25 @@ $stmt->execute();
 $stmt->bind_result($cid, $cnam);
 
 while($stmt->fetch()){
-	echo '<li><a href="clientdetails.php?cid='.$cid.'">'.$cnam.'</a></li>'.PHP_EOL;
+	echo '<li><a class="pdetails" href="clientdetails.php?cid='.$cid.'">'.$cnam.'</a></li>'.PHP_EOL;
 }
 
 ?>
 </ul>
-
+<br><br>
 <!--ADD PROJECT-->
 
-<h3> ADD A PROJECT </h3>
+<h3> Add a prpoject </h3>
+<ul>
 <form action="addproject.php" method="post">
-    <input type="text" name="$cnam" placeholder="Client Name" required>
-    <input type="text" name="$cad" placeholder="Adress" required>	
-    <input type="text" name="$ccnam" placeholder="Contact Name" required>
-    <input type="text" name="$cphone" placeholder="Contact Phone" required>
-      <input type="text" name="$czip" placeholder="Contact Zip" required>
-    <input type="submit" value="Add New Client">
+    <input type="text" name="$cnam" placeholder="Client Name" required><br>
+    <input type="text" name="$cad" placeholder="Adress" required><br>
+    <input type="text" name="$ccnam" placeholder="Contact Name" required><br>
+    <input type="text" name="$cphone" placeholder="Contact Phone" required><br>
+      <input type="text" name="$czip" placeholder="Contact Zip" required><br>
+    <button type="submit" value="Add New Client">Add new client</button>
 </form>
-
-
+</ul>
+</article>
 </body>
 </html>

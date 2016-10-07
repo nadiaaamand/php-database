@@ -11,9 +11,9 @@ $curpage = basename ($_SERVER['PHP_SELF']);
 
 <body>
 
-<ul>
-<li><a href="index.php"<?php if($curpage == 'index.php') {echo 'class="active"';}?>>Clients</a></li>
-<li><a href="allresources.php"<?php if($curpage == 'allrelsources.php') {echo 'class="active"';}?>>All resources</a></li>
+<ul id="menu">
+<li class="links"><a href="index.php"<?php if($curpage == 'index.php') {echo 'class="active"';}?>>Clients</a></li>
+<li class="links"><a href="allresources.php"<?php if($curpage == 'allresources.php') {echo 'class="active"';}?>>All resources</a></li>
 </ul>
 </body>
 </html>

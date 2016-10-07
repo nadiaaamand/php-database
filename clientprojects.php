@@ -12,6 +12,7 @@
 include 'menu.php'
 ?>
 </header>
+<article>
 <?php
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
 
@@ -35,12 +36,11 @@ while($stmt->fetch()) {
 	echo '<h5>'.$ccnam.'</h5>';
 	echo '<h5>'.$ccphone.'</h5>';
 	
-	//echo '<li><a href="projectdetails.php?fid='.$cnam.'">'.$cadr.' ('.$czip.')</a></li>'.PHP_EOL;
 }
 
 ?>
 </ul>
-
+</article>
 
 </body>
 </html>

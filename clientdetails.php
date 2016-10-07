@@ -13,7 +13,8 @@
 include 'menu.php'
 ?>
 </header>
-<h2>Client info</h2>
+<article>
+<h1>Client info</h1>
 <?php
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
 
@@ -30,16 +31,19 @@ $stmt->bind_result($cnam, $cadr, $ccnam, $ccphone, $czip);
 
 while($stmt->fetch()) { }
 
-echo '<h3>'.$cnam.'</h3>';
+echo '<h2>'.$cnam.'</h2>';
 ?>
 <!--UPDATE DETAILS-->
+<ul id="update">
 	<form action="updatedetails.php" method="post">
     	<input type="hidden" name="$cid" value='<?=$cid?>'>
-        <input type="text" name="$cnam" placeholder="Client Name">
-    	<input type="submit" value="Update Name">
+        <input type="text" name="$cnam" placeholder="Client Name" required>
+    	<button id="submit" type="submit" value="Update Name">Update Name</button>
     </form>
+  </ul>
 <?php 
 	//combine to strings and make between them
+	echo '<br>';
 	echo '<h4>'.'Address:'.'</h4>';
 	echo '<p>'.$cadr. ' ' .$czip.'</p>';
 	?>
@@ -67,7 +71,7 @@ while($stmt->fetch()) {
 </ul>
       
 
-<h2>Projects</h2>
+<h1>Projects</h1>
 <ul>
 
 <!--PROJECTS-->
@@ -84,11 +88,11 @@ $stmt->execute();
 $stmt->bind_result($pid, $pnam);
 
 while($stmt->fetch()) { 
-	echo '<li><a href="projectdetails.php?cid='.$cid.'">'.$pnam.'</a>'; 
+	echo '<li><a class="pdetails" href="projectdetails.php?cid='.$cid.'">'.$pnam.'</a>'; 
 }
 	?>	
 </ul>
-
+</article>
 
 </body>
 </html>

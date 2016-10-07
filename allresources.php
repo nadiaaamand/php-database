@@ -12,6 +12,9 @@
 include 'menu.php';
 ?>
 </header>
+<article>
+<h1>All resources</h1>
+
 <ul>
 <?php 
 
@@ -28,9 +31,10 @@ while($stmt->fetch()) {
 	echo '<h2>' .$rnam. '</h2>';
 	echo '<p>' .$rdetail. '</p>';
 	echo '<p>' .$rtcid. '</p>';
-
+	echo '<br>';
 }
 ?>
-
+</ul>
+</article>
 </body>
 </html>

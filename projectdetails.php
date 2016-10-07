@@ -12,7 +12,8 @@
 include 'menu.php'
 ?>
 </header>
-<h2>Client info</h2>
+<article>
+<h1>Client info</h1>
 <?php
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
 
@@ -29,11 +30,11 @@ $stmt->bind_result($cnam, $cadr, $ccnam, $ccphone, $czip);
 
 while($stmt->fetch()) { }
 
-echo '<h2>'.$cnam.'</h1>';
+echo '<h2>'.$cnam.'</h2>';
 ?>
 </ul>
 
-<h2>Project Details</h2>
+<h1>Project Details</h1>
 <ul>
 <?php 
 
@@ -60,7 +61,7 @@ while($stmt->fetch()) {
 }
 ?>
 </ul>
-<h2>Resources</h2>
+<h1>Resources</h1>
 <ul>
 <?php 
 $sql = 'SELECT `Resource-Name` 
@@ -73,9 +74,10 @@ $stmt->execute();
 $stmt->bind_result($rnam);
 
 while($stmt->fetch()) { 
-	echo '<li><a href="persondetails.php?cid='.$cid.'">'.$rnam.'</a></li>';
+	echo '<li><a class="pdetails" href="persondetails.php?cid='.$cid.'">'.$rnam.'</a></li>';
 }
 ?>
 </ul>
+</article>
 </body>
 </html>

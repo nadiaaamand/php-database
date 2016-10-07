@@ -32,7 +32,8 @@ while($stmt->fetch()){
 <br><br>
 <!--ADD PROJECT-->
 
-<h3> Add a prpoject </h3>
+<h3> Add a project </h3>
+<br>
 <ul>
 <form action="addproject.php" method="post">
     <input type="text" name="$cnam" placeholder="Client Name" required><br>
@@ -40,7 +41,7 @@ while($stmt->fetch()){
     <input type="text" name="$ccnam" placeholder="Contact Name" required><br>
     <input type="text" name="$cphone" placeholder="Contact Phone" required><br>
       <input type="text" name="$czip" placeholder="Contact Zip" required><br>
-    <button type="submit" value="Add New Client">Add new client</button>
+    <button class="submit" type="submit" value="Add New Client">Add new client</button>
 </form>
 </ul>
 </article>

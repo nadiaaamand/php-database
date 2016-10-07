@@ -64,3 +64,55 @@ p {
 	color: #797979;
 	
 	}
+ul form {
+	float: left;
+	}
+ul form input {
+	float: left;
+	margin-right: 5px;
+	border: 1px solid #B6B6B6;
+	font-size: 14px; 
+	padding: 10px;
+}
+ul form button {
+	float: left;
+	margin-right: 20px; 
+	background-color: #757575;
+	color: white;
+	font-size: 14px;
+	cursor: pointer;
+	border: 10px solid #757575;
+	}
+ul form button:hover {
+	background-color: #B2808E;
+	border: 10px solid #B2808E;
+	
+	}
+.submit {
+	margin-top: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-right: 22px;
+	padding-left: 22px;
+	font-size: 16px;
+	background-color: #757575;
+	color: white;
+	}
+.submit:hover {
+	background-color: #B2808E;}
+#update form input{
+	font-size: 10px;
+	
+	}
+#update form button {
+	border: 1px solid #757575;
+	font-size: 11px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 28px;
+	padding-right: 28px;	
+	}
+#delete form button {
+	padding-left: 24px;
+	padding-right: 25px;
+	}

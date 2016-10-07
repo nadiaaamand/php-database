@@ -28,9 +28,9 @@ $stmt->execute();
 $stmt->bind_result($rnam, $rdetail, $rtcid);
 
 while($stmt->fetch()) { 
-	echo '<h2>' .$rnam. '</h2>';
-	echo '<p>' .$rdetail. '</p>';
-	echo '<p>' .$rtcid. '</p>';
+	echo '<h3>' .$rnam. '</h3>'.PHP_EOL;
+	echo '<p>' .$rdetail. '</p>'.PHP_EOL;
+	echo '<p>' .$rtcid. '</p>'.PHP_EOL;
 	echo '<br>';
 }
 ?>

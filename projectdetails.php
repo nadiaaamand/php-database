@@ -49,14 +49,14 @@ $stmt->execute();
 $stmt->bind_result($pnam, $pdesc, $psd, $ped, $popid);
 
 while($stmt->fetch()) { 
-	echo '<h3>'.'Project name'.'</h3>';
-	echo '<p>'.$pnam.'</p>';
-	echo '<h3>'.'Project description'.'</h3>';
-	echo '<p>'.$pdesc.'</p>';
-	echo '<h3>'.'Project start date'.'</h3>';
-	echo '<p>'.$psd.'</p>';
-	echo '<h3>'.'Project end date'.'</h3>';
-	echo '<p>'.$ped.'</p>';
+	echo '<h3>'.'Project name'.'</h3>'.PHP_EOL;
+	echo '<p>'.$pnam.'</p>'.PHP_EOL;
+	echo '<h3>'.'Project description'.'</h3>'.PHP_EOL;
+	echo '<p>'.$pdesc.'</p>'.PHP_EOL;
+	echo '<h3>'.'Project start date'.'</h3>'.PHP_EOL;
+	echo '<p>'.$psd.'</p>'.PHP_EOL;
+	echo '<h3>'.'Project end date'.'</h3>'.PHP_EOL;
+	echo '<p>'.$ped.'</p>'.PHP_EOL;
 	
 }
 ?>
@@ -74,7 +74,7 @@ $stmt->execute();
 $stmt->bind_result($rnam);
 
 while($stmt->fetch()) { 
-	echo '<li><a class="pdetails" href="persondetails.php?cid='.$cid.'">'.$rnam.'</a></li>';
+	echo '<li><a class="pdetails" href="persondetails.php?cid='.$cid.'">'.$rnam.'</a></li>'.PHP_EOL;
 }
 ?>
 </ul>

@@ -32,20 +32,25 @@ $stmt->bind_result($cnam, $cadr, $ccnam, $ccphone, $czip);
 while($stmt->fetch()) { }
 
 echo '<h2>'.$cnam.'</h2>';
+echo '<br>'
 ?>
 <!--UPDATE DETAILS-->
 <ul id="update">
 	<form action="updatedetails.php" method="post">
     	<input type="hidden" name="$cid" value='<?=$cid?>'>
-        <input type="text" name="$cnam" placeholder="Client Name" required>
-    	<button id="submit" type="submit" value="Update Name">Update Name</button>
+        <input type="text" name="$cnam" placeholder="Client Name" required><br>
+    	<button class="submit" type="submit" value="Update Name">Update Name</button>
     </form>
   </ul>
 <?php 
 	//combine to strings and make between them
-	echo '<br>';
-	echo '<h4>'.'Address:'.'</h4>';
-	echo '<p>'.$cadr. ' ' .$czip.'</p>';
+	echo '<br>'.PHP_EOL;
+	echo '<br>'.PHP_EOL;
+	echo '<br>'.PHP_EOL;
+	echo '<br>'.PHP_EOL;
+	echo '<br>'.PHP_EOL;
+	echo '<h4>'.'Address:'.'</h4>'.PHP_EOL;
+	echo '<p>'.$cadr. ' ' .$czip.'</p>'.PHP_EOL;
 	?>
     <?php 
     $sql = 'SELECT `City` 
@@ -62,10 +67,10 @@ while($stmt->fetch()) {
 	?>
     
     <?php
-	echo '<h4>'.'Project Contact:'.'</h4>';
-	echo '<p>'.$ccnam.'</p>';
-	echo '<h4>'.'Contact Number:'.'</h4>';
-	echo '<p>'.$ccphone.'</p>';
+	echo '<h4>'.'Project Contact:'.'</h4>'.PHP_EOL;
+	echo '<p>'.$ccnam.'</p>'.PHP_EOL;
+	echo '<h4>'.'Contact Number:'.'</h4>'.PHP_EOL;
+	echo '<p>'.$ccphone.'</p>'.PHP_EOL;
 }
 ?>
 </ul>
@@ -88,7 +93,7 @@ $stmt->execute();
 $stmt->bind_result($pid, $pnam);
 
 while($stmt->fetch()) { 
-	echo '<li><a class="pdetails" href="projectdetails.php?cid='.$cid.'">'.$pnam.'</a>'; 
+	echo '<li><a class="pdetails" href="projectdetails.php?cid='.$cid.'">'.$pnam.'</a>'.PHP_EOL;
 }
 	?>	
 </ul>

@@ -35,10 +35,10 @@ while($stmt->fetch()) {
 }
 ?>
  <form type="button" action="allresources.php" method="get">
- 	<button>See all resources</button>
+ 	<button class="update">See all resources</button>
 </form>
 </ul>
-
+<br><br>
 <h1>Working projects</h1>
 <ul>
 <?php 
@@ -52,12 +52,11 @@ $stmt->execute();
 $stmt->bind_result($pid, $rid);
 
 while($stmt->fetch()) { 
-	echo '<br>';
-	echo '<h5>Project ID</h5>';
-	echo '<p>'.$pid.'</p>';
-	echo '<h5>Resource ID</h5>';
-	echo '<p>'.$rid.'</p>';
-	echo '<br>';
+	echo '<h5>Project ID</h5>'.PHP_EOL;
+	echo '<p>'.$pid.'</p>'.PHP_EOL;
+	echo '<h5>Resource ID</h5>'.PHP_EOL;
+	echo '<p>'.$rid.'</p>'.PHP_EOL;
+	echo '<br>'.PHP_EOL;
 }
 ?>
 </ul>
@@ -65,7 +64,7 @@ while($stmt->fetch()) {
 <form action="deleteproject.php" method="post">
     	<input type="text" name="pid" placeholder="Project ID" required><br>
         <input type="text" name="rid" placeholder="Resource ID" required><br>
-    	<input type="submit" value="Delete Resource">
+    	<button type="submit" value="Delete Resource">Delete resource</button>
     </form>
 </ul>
 </article>

@@ -32,9 +32,9 @@ $stmt->bind_result($cnam, $cadr, $ccnam, $ccphone, $czip);
 while($stmt->fetch()) {
 	echo '<h2>'.$cnam.'</h1>';
 	//combine to strings and make between them
-	echo '<h5>'.$cadr. ' ' .$czip.'</h5>';
-	echo '<h5>'.$ccnam.'</h5>';
-	echo '<h5>'.$ccphone.'</h5>';
+	echo '<h5>'.$cadr. ' ' .$czip.'</h5>'.PHP_EOL;
+	echo '<h5>'.$ccnam.'</h5>'.PHP_EOL;
+	echo '<h5>'.$ccphone.'</h5>'.PHP_EOL;
 	
 }
 
